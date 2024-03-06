@@ -2,31 +2,15 @@
 import requests
 
 
-
 url = "https://digital.iservices.rte-france.com/token/oauth/"
-
-
-
 data = { 'Authorization' : 'Basic ZjI3YjM5MTUtMTYzYi00OTFlLTllN2UtYWNlM2FiM2QxMjFiOjk3ZWExOGFkLTkyMDQtNGE1NC1iNmNmLTM4NTkwNmVlOTk4Nw==' ,
         'Content-Type': 'application/x-www-form-urlencoded',
        }
 
-
 # In[6]:
 
-
 response = requests.post(url, headers=data)
-
-
-# In[7]:
-
-
 status_code = response.status_code
-
-
-# In[8]:
-
-
 print('status code =',status_code)
 
 
@@ -34,28 +18,16 @@ print('status code =',status_code)
 
 
 info_rte_token = response.json()
-
-
-# In[10]:
-
-
 print('info_rte_token =', info_rte_token)
 
 
 # In[11]:
 
-
 token = info_rte_token['access_token']
-
-
-# In[12]:
-
-
 print('token =', token)
 
 
 # In[13]:
-
 
 from datetime import datetime, timedelta
 
@@ -84,59 +56,19 @@ print(end_date_str)
 url = f"https://digital.iservices.rte-france.com/open_api/actual_generation/v1/actual_generations_per_production_type?start_date={start_date_str}&end_date={end_date_str}"
 
 
-# In[15]:
-
-
 data = { 'Authorization' : 'Bearer '+ token,
         'Content-Type': 'application/soap+xml',
         'charset' : 'UTF-8',
        }
 
-
-# In[16]:
-
-
 response = requests.get(url, headers=data)
-
-
-# In[17]:
-
-
 status_code = response.status_code
-
-
-# In[18]:
-
-
 print('status code =',status_code)
-
-
-# In[19]:
-
-
-print ('Response')
-
-
-# In[20]:
-
-
-print (response)
 
 
 # In[21]:
 
-
-print (data)
-
-
-# In[22]:
-
-
 data = response.json()
-
-
-# In[23]:
-
 
 print (data)
 
@@ -214,10 +146,6 @@ fig.update_layout(
 
 # Export the figure as an HTML file
 fig.write_html('energy_production_by_type.html')
-
-
-# In[ ]:
-
 
 
 
