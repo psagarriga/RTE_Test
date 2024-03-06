@@ -148,8 +148,4 @@ fig.update_layout(
 fig.write_html('energy_production_by_type.html')
 
 
-# Show the plot
-fig.show()
 
-
-# In[27]:
