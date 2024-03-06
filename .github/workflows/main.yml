@@ -3,10 +3,10 @@ name: Python Script API Power Generation
 on:
 
  
- schedule:
-     - cron: '0 0/2 * * *' # At minute 0 past every 2 hours
+ #schedule:
+ #    - cron: '0 0/2 * * *' # At minute 0 past every 2 hours
 
- #workflow_dispatch: # Manually trigger the workflow
+ workflow_dispatch: # Manually trigger the workflow
 
 
 
