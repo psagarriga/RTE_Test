@@ -33,7 +33,7 @@ jobs:
  #************************ Check Name *********************************
       
       - name: Execute Python script
-        run: Graphs_Power_Generation v3.py
+        run: Graphs_Power_Generation_V2.py
 
 
 
